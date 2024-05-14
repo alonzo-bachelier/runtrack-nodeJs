@@ -1,4 +1,8 @@
-const server = require("./serveur");
-const createServ = server.createServeur;
+const serverModule = require("./serveur");
+const routes = require("./routes");
 
-createServ();
+const server = serverModule.createServeur(routes.handleRequestTasks);
+
+server.listen(8080, () => {
+    console.log(`Server is running on http://localhost:8080`);
+});

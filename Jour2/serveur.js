@@ -1,17 +1,13 @@
+const { error } = require("console");
+
 function createServeur() {
     const http = require("http");
     const host = "localhost";
-    const port = 8888;
+    const port = 8080;
 
     const requestListener = function (req, res) {
-        if (error) {
-            res.writeHead(500);
-            console.log("erreur 500");
-            return;
-        } else {
-            res.writeHead(200);
-            res.end("Hello world !");
-        }
+        res.writeHead(200);
+        res.end("Hello world !");
     };
 
     const server = http.createServer(requestListener);
@@ -20,4 +16,6 @@ function createServeur() {
     });
 }
 
-export default createServeur;
+module.exports = {
+    createServeur,
+};

@@ -1,3 +1,4 @@
-import createServeur from "./serveur";
+const server = require("./serveur");
+const createServ = server.createServeur;
 
-createServeur();
+createServ();

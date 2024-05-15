@@ -1,0 +1,12 @@
+job 2 : show dbs 
+
+job 3 : use shop
+	switched to db shop
+	db.createCollection("product")
+	db.product.insertOne({name : "chaussures", description : "une paire de 	chaussures", price : 35, quantity : 120})
+
+job 4 : db.product.insertMany([{name : "Pantalon noir", description : "Un pantalon noir", price : 14.99, quantity : 12}, {name : "chaussettes", description : "chaussettes cool !",price : 6 , quantity : 6 }])
+
+job 5 : db.createCollection("category")
+	db.product.insertMany([{name : "Pantalon noir", description : "Un pantalon noir", price : 14.99, quantity : 12}, {name : "chaussettes", description : "chaussettes cool !",price : 6 ,quantity : 6 }])
+

@@ -5,6 +5,8 @@ function handleRequest(req, res) {
         getAllTasks(req, res);
     } else if (req.url === "/tasks" && req.method === "POST") {
         postTask(req, res);
+    } else if (req.url === "/tasks" && req.method === "DELETE") {
+        deleteTask(req, res);
     } else {
         defaultResponse(req, res);
     }
@@ -51,7 +53,7 @@ function postTask(req, res) {
         }
     });
 }
-
+function deleteTask(req, res) {}
 function defaultResponse(req, res) {
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Hello world !");

@@ -25,3 +25,10 @@ job 11 : db.product.find({ price: { $gt: 5 }, quantity: { $lt: 100 } })
 job 12 : db.product.find({$or : [{price : {$gt : 14.99 }}, {quantity : {$gt : 100}}]})
 
 job 13 : db.product.find({}, {_id : 0 })
+
+job 14 : db.category.find({_id: ObjectId('6644967650fd5f89ade42096')})
+
+job 15 : db.category.insertOne({name : "bébé"})    (je n'avais pas mis cette categorie donc je la met pour l'exo) 
+	db.category.updateOne({_id: ObjectId('6644a7ee50fd5f89ade42098')}, {$set : {name:"Vetement pour bébé"}})
+
+job 16 : 

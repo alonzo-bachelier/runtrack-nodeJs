@@ -1,0 +1,17 @@
+pour la methode POST, lancer un premier terminal pour démarrer le serveur avec node index.js, puis un second pour envoyer le contenu dans le json avec : $body = @{
+    lastname = "Bachelier"
+    firstname = "Alonzo"
+    students_number = 126
+    year = @(
+        @{
+            year_id = "66460f22eecd422cac49be8d"
+            yearCursus = "Bachelore 1"
+        }
+    )
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri http://localhost:3000/student -Method Post -ContentType "application/json" -Body $body
+
+je ne peux pas utiliser la methode curl alors le post doit être fait de cette manière 
+
+pour la methode delete : Invoke-RestMethod -Uri http://localhost:3000/student/66460f22eecd422cac49be8d -Method Delete
